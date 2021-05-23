@@ -622,6 +622,7 @@ json_t * user_auth_scheme_module_register_get(struct config_module * config, con
     json_object_set(json_object_get(j_otp, "otp"), "issuer", json_object_get((json_t *)cls, "issuer"));
     json_object_set(json_object_get(j_otp, "otp"), "hotp-allow", json_object_get((json_t *)cls, "hotp-allow")==json_false()?json_false():json_true());
     json_object_set(json_object_get(j_otp, "otp"), "totp-allow", json_object_get((json_t *)cls, "totp-allow")==json_false()?json_false():json_true());
+    json_object_del(json_object_get(j_otp, "otp"), "secret");
     j_return = json_pack("{sisO}", "result", G_OK, "response", json_object_get(j_otp, "otp"));
   } else if (check_result_value(j_otp, G_ERROR_NOT_FOUND)) {
     j_return = json_pack("{sis{sssososIsIsI}}", 
