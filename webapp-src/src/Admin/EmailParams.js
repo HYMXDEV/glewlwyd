@@ -305,7 +305,7 @@ class EmailParams extends Component {
             <div className="input-group-prepend">
               <label className="input-group-text" htmlFor="mod-email-code-length">{i18next.t("admin.mod-email-code-length")}</label>
             </div>
-            <input type="number" min="0" max="65536" step="1" className={this.state.errorList["code-length"]?"form-control is-invalid":"form-control"} id="mod-email-code-length" onChange={(e) => this.changeParam(e, "code-length")} value={this.state.mod.parameters["code-length"]} placeholder={i18next.t("admin.mod-email-code-length-ph")} />
+            <input type="number" min="0" max="65536" step="1" className={this.state.errorList["code-length"]?"form-control is-invalid":"form-control"} id="mod-email-code-length" onChange={(e) => this.changeParam(e, "code-length", true)} value={this.state.mod.parameters["code-length"]} placeholder={i18next.t("admin.mod-email-code-length-ph")} />
           </div>
           {this.state.errorList["code-length"]?<span className="error-input">{this.state.errorList["code-length"]}</span>:""}
         </div>
@@ -314,7 +314,7 @@ class EmailParams extends Component {
             <div className="input-group-prepend">
               <label className="input-group-text" htmlFor="mod-email-code-duration">{i18next.t("admin.mod-email-code-duration")}</label>
             </div>
-            <input type="number" min="0" max="65536" step="1" className={this.state.errorList["code-duration"]?"form-control is-invalid":"form-control"} id="mod-email-code-duration" onChange={(e) => this.changeParam(e, "code-duration")} value={this.state.mod.parameters["code-duration"]} placeholder={i18next.t("admin.mod-email-code-duration-ph")} />
+            <input type="number" min="0" max="65536" step="1" className={this.state.errorList["code-duration"]?"form-control is-invalid":"form-control"} id="mod-email-code-duration" onChange={(e) => this.changeParam(e, "code-duration", true)} value={this.state.mod.parameters["code-duration"]} placeholder={i18next.t("admin.mod-email-code-duration-ph")} />
           </div>
           {this.state.errorList["code-duration"]?<span className="error-input">{this.state.errorList["code-duration"]}</span>:""}
         </div>
